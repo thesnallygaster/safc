@@ -1,0 +1,12 @@
+[Unit]
+Description=Simple AMDGPU Fan Control
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/safc
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

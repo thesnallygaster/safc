@@ -1,0 +1,15 @@
+[safc]
+# Specify the GPU card (e.g., card0, card1)
+card = card0
+
+# Fan curve: 'temp:pwm' pairs separated by commas
+# Example: Below 60°C, use 77 (30%). At and above 60°C, use 102 (40%).
+fan_curve = 0:77,60:102
+
+# This value tells safc by how many degrees the temp should rise/drop
+# for it to actually change the fan speed. This avoids rapid changes
+# in fan speed.
+temp_hysteresis = 3
+
+# This value tells safc how often it should check the temp
+adjust_interval = 5
