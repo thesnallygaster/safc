@@ -59,7 +59,10 @@ def set_pwm_control(control_file, control_mode):
 def get_pwm(temp, fan_curve):
     for i, (t, pwm) in enumerate(fan_curve):
         if temp < t:
-            return fan_curve[i - 1][1] if i > 0 else pwm
+            if i > 0:
+                return fan_curve[i - 1][1]
+            else:
+                return pwm
     return fan_curve[-1][1]
 
 def control_fan(card, fan_curve, temp_hysteresis, adjust_interval):
